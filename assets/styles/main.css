@@ -13,6 +13,10 @@
 }
 
 @media (max-width: 768px) {
+    main {
+        padding-top: 80px;
+    }
+    
     #navbar {
         height: 60px;
         padding: 0.5rem 0;
