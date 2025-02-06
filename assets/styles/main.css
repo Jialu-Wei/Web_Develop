@@ -1,6 +1,5 @@
 #navbar {
     font-family: Arial, sans-serif;
-
     position: fixed;
     top: 0;
     left: 0;
@@ -34,19 +33,20 @@ nav {
     gap: 1rem;
 }
 
-
 .nav-links ul li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
     padding: 5px 10px;
     border-radius: 5px;
-    transition: background-color 0.3s;
+    transition: transform 0.3s ease-in-out;
 }
 
 .nav-links ul li a:hover {
-    background-color: #002b5e;
+    transform: scale(0.5);
+    /* background-color: #002b5e; */
 }
+
 
 @media (max-width: 768px) {
     .nav-links ul {

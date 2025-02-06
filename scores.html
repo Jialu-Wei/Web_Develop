@@ -14,7 +14,6 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-
             min-height: calc(100vh - 80px); 
             padding: 2rem;
             box-sizing: border-box; 
@@ -27,13 +26,26 @@
         }
 
         .scores-table {
-            width: 80%;
-            max-width: 600px;
-            border-collapse: collapse;
-            margin-top: 20px;
-            background-color: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    width: 80%;
+    max-width: 600px;
+    margin-top: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 10px;
+}
+
+.scores-table .header {
+    font-weight: bold;
+    background-color: #004080;
+    color: white;
+    padding: 10px;
+}
+
+
 
         .scores-table th, .scores-table td {
             border: 1px solid #ddd;
@@ -74,15 +86,20 @@
         }
 
         .btn:hover {
+            transform: scale(0.95);
+
             background-color: #002b5e;
+
         }
 
         /* Small screens */
         @media (max-width: 480px) {
             .scores-table {
                 width: 100%;
+                overflow-x: auto;
             }
         }
+
     </style>
 </head>
 
@@ -105,21 +122,21 @@
 
     <main>
         <h2>High Scores</h2>
-        <table class="scores-table">
-            <tr>
-                <th>Username</th>
-                <th>Wins</th>
-                <th>Losses</th>
-            </tr>
-            <tr><td>Payer_1</td><td>15</td><td>5</td></tr>
-            <tr><td>Payer_2</td><td>12</td><td>8</td></tr>
-            <tr><td>Payer_3</td><td>18</td><td>3</td></tr>
-            <tr><td>Payer_4</td><td>10</td><td>10</td></tr>
-            <tr><td>Payer_5</td><td>14</td><td>7</td></tr>
-            <tr><td>Payer_6</td><td>20</td><td>2</td></tr>
-            <tr><td>Payer_7</td><td>9</td><td>12</td></tr>
-            <tr><td>Payer_8</td><td>11</td><td>9</td></tr>
-        </table>
+        <div class="scores-table">
+            <div class="header">Username</div>
+            <div class="header">Wins</div>
+            <div class="header">Losses</div>
+            
+            <div>Payer_1</div> <div>15</div> <div>5</div>
+            <div>Payer_2</div> <div>12</div> <div>8</div>
+            <div>Payer_3</div> <div>18</div> <div>3</div>
+            <div>Payer_4</div> <div>10</div> <div>10</div>
+            <div>Payer_5</div> <div>20</div> <div>3</div>
+            <div>Payer_6</div> <div>9</div> <div>9</div>
+            <div>Payer_7</div> <div>23</div> <div>12</div>
+
+        </div>
+        
 
         <div class="button-group">
             <button class="btn" onclick="location.href='game.html'">Play Again</button>
