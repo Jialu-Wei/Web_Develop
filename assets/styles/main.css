@@ -44,7 +44,7 @@ nav {
 
 .nav-links ul li a:hover {
     transform: scale(0.5);
-    /* background-color: #002b5e; */
+    background-color: #002b5e;
 }
 
 
