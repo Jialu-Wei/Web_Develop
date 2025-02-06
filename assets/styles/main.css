@@ -11,8 +11,6 @@
     z-index: 1000;
 }
 
-
-/* 导航栏内部布局 */
 nav {
     display: flex;
     flex-direction: column;
@@ -23,13 +21,11 @@ nav {
     padding: 0 20px;
 }
 
-/* 标题部分 */
 .nav-header h1 {
     margin: 0;
     font-size: 2rem;
 }
 
-/* 导航链接部分 */
 .nav-links ul {
     list-style: none;
     display: flex;
@@ -37,7 +33,6 @@ nav {
     margin: 0;
     gap: 1rem;
 }
-
 
 
 .nav-links ul li a {
