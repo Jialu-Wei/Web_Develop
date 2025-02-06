@@ -34,15 +34,6 @@
             justify-content: center;
         }
 
-        @media (max-width: 768px) {
-            main {
-                padding-top: 100px; 
-            }
-            .game-container {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
 
         .board {
             display: flex;
@@ -67,11 +58,9 @@
         }
 
 
+
         @media (max-width: 768px) {
 
-            main {
-                padding-top: 200px; 
-            }
             .game-container {
                 flex-direction: column;
                 align-items: center;
@@ -96,6 +85,18 @@
             .misses, .hit {
                 font-size: 16px;
             }
+        }
+
+        .ship::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            background-color: black;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
         }
 
 
@@ -158,88 +159,86 @@
         </nav>
     </header>
 
-     <main>
-         <div class="time">
-            <p>Time: <span>00:00</span></p>
-        </div>
+
+            <main>
+                <div class="time">
+                    <p>Time: <span>00:00</span></p>
+                </div>
+                <button class="restart-btn">Restart</button>
+            
+                <section class="game-container">
+                    <div class="board">
+                        <h3>Enemy board</h3>
+
+                        <table>
     
-        <button class="restart-btn">Restart</button>
-
-         <section class="game-container">
-             <div class="board">
-                 <h3>Enemy board</h3>
-                 <table>
-    
-                     <tr>
-                         <td></td><td></td><td></td><td></td ><td></td><td></td><td></td><td class="misses">X</td><td></td><td></td>
-                     </tr>
-                     <tr>
-                         <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-                     </tr>
-                     <tr>
-                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-                    </tr>
-                     <tr>
-                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-                    </tr>
-                     <tr>
-                        <td class="hit">&#10004</td><td class="hit">&#10004</td><td></td><td></td><td></td><td class="misses">X</td><td></td><td></td><td></td><td></td>
-                    </tr>
-                     <tr>
-                        <td></td><td></td><td></td><td></td><td></td><td class="hit">&#10004</td><td class="hit">&#10004</td><td></td><td></td><td></td>
-                    </tr>
-                     <tr>
-                        <td></td><td></td><td></td><td></td><td></td><td class="misses">X</td><td></td><td></td><td></td><td></td>
-                    </tr>
-                     <tr>
-                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-                    </tr>
-                     <tr>
-                         <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-                     </tr>
-                     <tr>
-                         <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-                     </tr>
-                 </table>
-             </div>
-             <!-- Player board -->
-             <div class="board">
-                 <h3>Player board</h3>
-                 <table>
-      
-                    <tr>
-                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-                    </tr>
-                    <tr>
-                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-                    </tr>
-                    <tr>
-                        <td></td><td class="ship"></td><td class="ship"></td><td class="ship"></td><td></td><td></td><td></td><td></td><td></td><td></td>
-                    </tr>
-                    <tr>
-                        <td></td><td></td><td></td><td></td><td></td><td></td><td class="ship"></td><td class="ship"></td><td></td><td></td>
-                    </tr>
-                    <tr>
-                        <td></td><td></td><td class="ship"></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-                    </tr>
-                    <tr>
-                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="misses">X</td><td class="ship"></td><td></td>
-                    </tr>
-                    <tr>
-                        <td></td><td class="ship"></td><td></td><td class="ship"></td><td></td><td></td><td></td><td></td><td></td><td></td>
-                    </tr>
-                    <tr>
-                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="ship"></td><td></td><td></td>
-                    </tr>
-                    <tr>
-                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-                    </tr>
-                    <tr>
-                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-                    </tr>
-                </table>
-
-
-                
-            </body>
-            </html>
+                            <tr>
+                                <td></td><td></td><td></td><td></td ><td></td><td></td><td></td><td class="misses">X</td><td></td><td></td>
+                            </tr>
+                            <tr>
+                                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                            </tr>
+                            <tr>
+                               <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                           </tr>
+                            <tr>
+                               <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                           </tr>
+                            <tr>
+                               <td class="hit">&#10004</td><td class="hit">&#10004</td><td></td><td></td><td></td><td class="misses">X</td><td></td><td></td><td></td><td></td>
+                           </tr>
+                            <tr>
+                               <td></td><td></td><td></td><td></td><td></td><td class="hit">&#10004</td><td class="hit">&#10004</td><td></td><td></td><td></td>
+                           </tr>
+                            <tr>
+                               <td></td><td></td><td></td><td></td><td></td><td class="misses">X</td><td></td><td></td><td></td><td></td>
+                           </tr>
+                            <tr>
+                               <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                           </tr>
+                            <tr>
+                                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                            </tr>
+                            <tr>
+                                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="board">
+                        <h3>Player board</h3>
+                        <table>
+             
+                           <tr>
+                               <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                           </tr>
+                           <tr>
+                               <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                           </tr>
+                           <tr>
+                               <td></td><td class="ship"></td><td class="ship"></td><td class="ship"></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                           </tr>
+                           <tr>
+                               <td></td><td></td><td></td><td></td><td></td><td></td><td class="ship"></td><td class="ship"></td><td></td><td></td>
+                           </tr>
+                           <tr>
+                               <td></td><td></td><td class="ship"></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                           </tr>
+                           <tr>
+                               <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="misses">X</td><td class="ship"></td><td></td>
+                           </tr>
+                           <tr>
+                               <td></td><td class="ship"></td><td></td><td class="ship"></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                           </tr>
+                           <tr>
+                               <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="ship"></td><td></td><td></td>
+                           </tr>
+                           <tr>
+                               <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                           </tr>
+                           <tr>
+                               <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                           </tr>
+                       </table>
+                    </div>
+                </section>
+            </main>
