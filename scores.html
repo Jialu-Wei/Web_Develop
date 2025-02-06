@@ -92,18 +92,35 @@
 
         }
 
-        /* Small screens */
         @media (max-width: 480px) {
-            main {
-                padding-top: 80px;
-            }
+    main {
+        padding-top: 80px;
+    }
 
-            .scores-table {
-                display: block;
-                width: 100%;
-                overflow-x: auto;
-            }
-        }
+    .scores-table {
+        display: block; /* 取消 grid，让它们换行 */
+        width: 100%;
+        overflow-x: auto; /* 允许横向滚动，防止内容被压缩 */
+    }
+
+    .scores-table .header {
+        display: block;
+        font-weight: bold;
+        background-color: #004080;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        margin-top: 5px;
+    }
+
+    .scores-table div {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+}
+
 
     </style>
 </head>
