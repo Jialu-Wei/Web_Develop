@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battleship Game</title>
+    <link rel="stylesheet" href="assets/styles/main.css">
+</head>
+<style>
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+
+}
+
+
+.hero {
+    max-width: 80%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-image: url('assets/assets/images/Screenshot 2025-02-05 at 16.15.55.png/main.css');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 500px; /* 控制背景图片大小 */
+    justify-content: center;
+}
+
+
+
+
+.start-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #004080;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.start-btn:hover {
+    background-color: #002b5e;
+}
+
+</style>
+
+<body>
+
+    <header id="navbar">
+        <nav>
+            <div class="nav-header">
+                <h1>Battleship</h1>
+            </div>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="game.html">Game</a></li>
+                    <li><a href="rules.html">Rules</a></li>
+                    <li><a href="scores.html">Scores</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Welcome to Battleship!</h2>
+            </div>
+            <img src="assets/images/Battleship.png" alt="Battleship Game" length="1000" width="800">
+
+            <button class="start-btn" onclick="location.href='game.html'">Start</button>
+
+        </section>
+    </main>
+    
+</body>
+</html>

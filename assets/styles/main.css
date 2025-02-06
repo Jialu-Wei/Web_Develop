@@ -1,0 +1,71 @@
+#navbar {
+    font-family: Arial, sans-serif;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #004080;
+    color: white;
+    padding: 1rem 0;
+    z-index: 1000;
+}
+
+
+/* 导航栏内部布局 */
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 标题部分 */
+.nav-header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+/* 导航链接部分 */
+.nav-links ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    gap: 1rem;
+}
+
+
+
+.nav-links ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.nav-links ul li a:hover {
+    background-color: #002b5e;
+}
+
+@media (max-width: 768px) {
+    .nav-links ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .nav-links ul li a {
+        padding: 8px 12px;
+    }
+}
+
+
+
+
+

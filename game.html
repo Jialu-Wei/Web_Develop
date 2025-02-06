@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Page</title>
+    <link rel="stylesheet" href="assets/styles/main.css">
+
+     <style>
+ 
+        main {
+            
+            display: flex; /* 先设置 flex */
+            flex-direction: column;
+            justify-content: center; /* 垂直居中 */
+            align-items: center; /* 水平居中 */
+            height: 100vh; /* 让 main 占满整个视口 */
+            text-align: center;
+            background-color: #f0f0f0;
+            padding: 2rem; /* 统一 padding */
+            padding-top: 100px; /* 确保内容不会被导航栏遮挡 */
+            box-sizing: border-box; /* 避免 padding 影响高度计算 */
+        }
+
+        h2{
+            font-size: 50px;
+
+        
+
+        }
+
+        .game-container {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap; 
+            justify-content: center; 
+        }
+
+        .board {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h3 {
+            font-family: Arial, sans-serif;
+            margin-bottom: 0.5rem;
+        }
+
+        table {
+            border-collapse: separate;
+            border-spacing: 5px;
+        }
+
+        td {
+            width: 40px;
+            height: 40px;
+            background-color: lightblue;
+            border: 1px solid grey;
+            position: relative;
+            text-align: center;
+            vertical-align: middle;
+            cursor: pointer;
+        }
+
+        .ship::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            background-color: black;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .misses {
+            background-color: pink;
+            color: red;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .hit {
+            background-color: lightgreen;
+            color: green;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .restart-btn {
+            text-align: center;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .restart-btn:hover {
+            background-color: #555;
+        }
+
+        .time {
+            font-family: Arial, sans-serif;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .game-container {
+                flex-direction: column; 
+                gap: 1rem;
+            }
+
+            td {
+                width: 30px; 
+                height: 30px;
+            }
+
+            .misses, .hit {
+                font-size: 18px; 
+            }
+        }
+
+        @media (max-width: 480px) {
+            td {
+                width: 25px; 
+                height: 25px;
+            }
+
+            .misses, .hit {
+                font-size: 16px; 
+            }
+        }
+        
+     </style>
+    
+ </head>
+
+ <body>
+    <header id="navbar">
+        <nav>
+            <div class="nav-header">
+                <h1>Battleship</h1>
+            </div>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="game.html">Game</a></li>
+                    <li><a href="rules.html">Rules</a></li>
+                    <li><a href="scores.html">Scores</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+     <main>
+
+         <div class="time">
+            <p>Time: <span>00:00</span></p>
+        </div>
+    
+        <button class="restart-btn">Restart</button>
+
+         <section class="game-container">
+             <div class="board">
+                 <h3>Enemy board</h3>
+                 <table>
+    
+                     <tr>
+                         <td></td><td></td><td></td><td></td ><td></td><td></td><td></td><td class="misses">X</td><td></td><td></td>
+                     </tr>
+                     <tr>
+                         <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                     </tr>
+                     <tr>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                     <tr>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                     <tr>
+                        <td class="hit">&#10004</td><td class="hit">&#10004</td><td></td><td></td><td></td><td class="misses">X</td><td></td><td></td><td></td><td></td>
+                    </tr>
+                     <tr>
+                        <td></td><td></td><td></td><td></td><td></td><td class="hit">&#10004</td><td class="hit">&#10004</td><td></td><td></td><td></td>
+                    </tr>
+                     <tr>
+                        <td></td><td></td><td></td><td></td><td></td><td class="misses">X</td><td></td><td></td><td></td><td></td>
+                    </tr>
+                     <tr>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                     <tr>
+                         <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                     </tr>
+                     <tr>
+                         <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                     </tr>
+                 </table>
+             </div>
+             <!-- Player board -->
+             <div class="board">
+                 <h3>Player board</h3>
+                 <table>
+      
+                    <tr>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr>
+                        <td></td><td class="ship"></td><td class="ship"></td><td class="ship"></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td class="ship"></td><td class="ship"></td><td></td><td></td>
+                    </tr>
+                    <tr>
+                        <td></td><td></td><td class="ship"></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="misses">X</td><td class="ship"></td><td></td>
+                    </tr>
+                    <tr>
+                        <td></td><td class="ship"></td><td></td><td class="ship"></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="ship"></td><td></td><td></td>
+                    </tr>
+                    <tr>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                </table>
+
+
+                
+            </body>
+            </html>
