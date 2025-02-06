@@ -8,19 +8,13 @@
 
      <style>
         main {
-
+            padding-top: 100px; 
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
-            height: 100vh;
-            text-align: center;
-            background-color: #f0f0f0;
-            padding: 2rem;
-            padding-top: 100px; 
-            box-sizing: border-box;
-            
+            justify-content: center;
         }
+
 
         h2 {
             font-size: 50px;
@@ -57,18 +51,17 @@
             cursor: pointer;
         }
 
-
-
         @media (max-width: 768px) {
-            main {
-                padding-top: 100px;
-            }
-
             .game-container {
-                flex-direction: column;
+                flex-direction: column; /* 让棋盘和按钮垂直排列 */
                 align-items: center;
             }
 
+            .time, .restart-btn {
+                text-align: center;
+                width: 100%;
+                margin-top: 10px;
+            }
             td {
                 width: 30px;
                 height: 30px;
@@ -78,6 +71,9 @@
                 font-size: 18px;
             }
         }
+
+
+
 
         @media (max-width: 480px) {
             main {
