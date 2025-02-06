@@ -9,6 +9,7 @@
     <style>
         main {
             font-family: Arial, sans-serif;
+            padding-top: 80px;
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -17,13 +18,9 @@
             min-height: calc(100vh - 80px); 
             padding: 2rem;
             box-sizing: border-box; 
+            
         }
 
-
-        h2 {
-            margin-bottom: 1rem;
-            font-size: 2rem;
-        }
 
         .scores-table {
             display: grid;
@@ -91,7 +88,33 @@
             background-color: #002b5e;
 
         }
+
+        @media (max-width: 768px) {
+            main {
+                padding-top: 80px;
+            }
+            .scores-table {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr); 
+                width: 100%;
+                font-size: 12px; 
+                padding: 5px;
+                transform: scale(0.9); 
+            }
+
+            .scores-table div {
+                padding: 5px;
+            }
+
+            .scores-table .header {
+                font-size: 14px;
+            }
+        }
+
         @media (max-width: 480px) {
+            main {
+                padding-top: 80px;
+            }
             .scores-table {
                 display: grid;
                 grid-template-columns: repeat(3, 1fr); 
@@ -134,7 +157,6 @@
     </header>
 
     <main>
-        <h2>High Scores</h2>
         <div class="scores-table">
             <div class="header">Username</div>
             <div class="header">Wins</div>
