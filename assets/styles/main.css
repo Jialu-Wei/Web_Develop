@@ -13,17 +13,16 @@
 }
 
 @media (max-width: 768px) {
-    main {
-        padding-top: 80px;
+
+    .nav-links ul li {
+        width: 100%;
+        text-align: center;
     }
 
-    #navbar {
-        height: 80px;
-        padding: 0.5rem 0;
-    }
-    .nav-links ul {
-        /* flex-direction: column; */
-        gap: 0.5rem;
+    .nav-links ul li a {
+        display: block;
+        padding: 10px;
+        width: 100%;
     }
 }
 
